@@ -50,16 +50,20 @@ public class LambtonStringTools
     {
         String new_s = null;
         int count = 0;
+        int max=3;
         char[] ch = s.toCharArray();
         if(!s.isEmpty()){
           for(int i=0;i<s.length()-1;i++){
               for(int j=s.length()-1;j>=0;j--){
                   if(ch[i] == ch[j]){
                       ch[i] = ch[j];
+                      count++;
                   }
                   new_s = String.copyValueOf(ch);
               }
-              count ++;
+              while(count>max){
+                  new_s = String.copyValueOf(ch);
+              }
           }
         }
         return new_s;
@@ -73,7 +77,8 @@ public class LambtonStringTools
     //5 - REPLACING SUBSTRING WITH NEW STRING IN EXISTING STRING
     public static String replaceSubString(String originalString, String findString, String newString) 
     {
-        originalString.replace("college","university");
-        return originalString;
+        String new_String = null;
+        new_String = originalString.replace(findString,newString);
+        return new_String;
     }
 }
