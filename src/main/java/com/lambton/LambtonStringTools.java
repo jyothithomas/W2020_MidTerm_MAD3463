@@ -61,7 +61,7 @@ public class LambtonStringTools
                   }
                   new_s = String.copyValueOf(ch);
               }
-              while(count>max){
+              if(count>max){
                   new_s = String.copyValueOf(ch);
               }
           }
