@@ -5,33 +5,65 @@
  */
 package com.lambton;
 
+///import sun.jvm.hotspot.memory.PlaceholderEntry;
+
+import javafx.util.StringConverter;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.function.Consumer;
+
 /**
  *
  * @author Pritesh Patel
  */
 public class LambtonStringTools 
 {
+
+
     //1 - REVERSE STRING
     public static String reverse(String s)
     {
-        //char[] rev_ch = new char{};
-
-        return null;
+        String new_s = new String();
+        //System.out.println(ar_new);
+        int length = s.length();
+        char[] ch;
+        ch = s.toCharArray();
+        //System.out.println(ch);
+        for(int i = length-1; i>= 0; i--){
+            System.out.print(ch[i]);
+            new_s = String.valueOf(ch[i]);
+        }
+        return new_s;
     }
     
     //2 - FORMAT INITIALS OF STRING
     public static String initials(String s) 
     {
-
-        return null;
+        String upper_case_line = null;
+        upper_case_line = Character.toUpperCase(s.charAt(0))+" "+ Character.toUpperCase(s.charAt(8))+s.substring(13);
+        return upper_case_line;
     }
         
     //3 - FIND MOST FREQUENT CHARACTER FROM STRING
     public static String mostFrequent(String s) 
     {
-        return null;
+        String new_s = null;
+        int count = 0;
+        char[] ch = s.toCharArray();
+        if(!s.isEmpty()){
+          for(int i=0;i<s.length()-1;i++){
+              for(int j=s.length()-1;j>=0;j--){
+                  if(ch[i] == ch[j]){
+                      ch[i] = ch[j];
+                  }
+                  new_s = String.copyValueOf(ch);
+              }
+              count ++;
+          }
+        }
+        return new_s;
     }
-    
     //4 - CONVERT BINARY NUMBER TO DECIMALS
     public static int binaryToDecimal(String s) 
     {
